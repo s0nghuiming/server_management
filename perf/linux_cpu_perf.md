@@ -1,7 +1,7 @@
-### cpu
+# cpu
 ## cpupower
 Manual page: https://linux.die.net/man/1/cpupower-frequency-set
-# Perf prefer
+### Perf prefer
 cpupower frequency-set -g performance
-# Perf info
+### Perf info
 cpupower frequency-info
