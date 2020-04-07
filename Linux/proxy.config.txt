@@ -1,0 +1,31 @@
+# Ubuntu:
+## file: /etc/environment (>version 18)
+http_proxy=
+https_proxy=
+ftp_proxy=
+no_proxy=127.0.0.*;localhost
+
+
+# Wget:
+## file: /etc/wgetrc. the file includes sample
+https_proxy = http://child-prc.intel.com:913/
+http_proxy = http://child-prc.intel.com:913/
+ftp_proxy = http://child-prc.intel.com:913/
+use_proxy = on
+
+
+# apt:
+## file: /etc/apt/apt.conf.d/proxy [optional]
+Acquire::http::Proxy "http://proxy-server:port/";
+Acquire::https::Proxy "https://proxy-server:port/";
+Acquire::ftp::Proxy "https://proxy-server:port/";
+## socks needs confirm
+#Acquire::socks::Proxy "socks5://proxy-server:port/"; 
+
+
+# Git:
+git config --global http.proxy http://proxyUsername:proxyPassword@proxy.server.com:port
+git config --global https.proxy https://proxyUsername:proxyPassword@proxy.server.com:port
+## or
+git config --global http.https://domain.com.proxy http://proxyUsername:proxyPassword@proxy.server.com:port
+git config --global http.https://domain.com.sslVerify false
