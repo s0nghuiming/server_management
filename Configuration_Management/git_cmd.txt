@@ -1,0 +1,89 @@
+# clone from git server:
+git clone ssg_gitserver@appgitserver:/home/Git-Apk/
+
+# these commands can remove some data from git server. 
+git filter-branch --index-filter 'git rm -r --cached --ignore-unmatch unwanted_folder' --prune-empty
+
+# to actually remove the files from the packfile.
+git gc --aggressive --prune
+
+# list all files in local repository
+git ls-tree --full-tree -r HEAD
+
+# list-all-deleted-files-in-a-git-repository
+git log --diff-filter=D --summary | grep delete
+
+# show a simple log
+git log --pretty=format:'%H : %an : %cd : %s' > log.log
+
+# show graph of log
+git log --pretty=format:'%H : %s' --graph > log.log
+
+# show a simple log
+git --no-pager log --pretty=format:'%H %ai, message: %s' | grep ".* 2017" 
+
+# the git verify-pack plumbing command allows you to see what was packed up:
+$ git verify-pack -v .git/objects/pack/pack-978e03944f5c581011e6998cd0e9e30000905586.idx
+
+# list files in one commit
+git diff-tree --no-commit-id --name-only -r 686d12ef7e4a1a90d5aaea52da10184f17546246
+
+# list commits that contain a particular file
+git log --follow filename
+
+# checkout one file from remote
+git checkout [branch name/commit ID] -- folder1/d
+
+# Push
+# Push to gerrit in teamforge.
+git push origin HEAD:refs/for/master
+
+# Push a new branch on local to server side. ( New branch on server side )
+git push -u origin official_pytorch_sync
+
+# Ignore commits previously
+git reset --hard commitID
+
+# Delete a branch.
+# Delete a branch on server side
+git push origin --delete serverfix
+
+# Delete a branch on local side
+git branch -d feature/login
+
+# Find all deleted files
+git log --diff-filter=D --summary
+
+# move a branch
+git branch -m master-v0.2 master
+
+## Merge
+
+# Find all conflicts when merging
+git diff --name-only --diff-filter=U
+
+# Checkout a file after merging conflict
+git checkout --ours <srcfile> or --theirs <srcfile>
+
+
+# rebase to squash
+$ git rebase -i HEAD~4
+
+pick 01d1124 Adding license
+pick 6340aaa Moving license into its own file
+pick ebfd367 Jekyll has become self-aware.
+pick 30e0ccb Changed the tagline in the binary, too.
+
+# Rebase 60709da..30e0ccb onto 60709da
+#
+# Commands:
+#  p, pick = use commit
+#  e, edit = use commit, but stop for amending
+#  s, squash = use commit, but meld into previous commit
+#
+# If you remove a line here THAT COMMIT WILL BE LOST.
+# However, if you remove everything, the rebase will be aborted.
+
+
+# Switch off auto gc
+git config --global gc.auto 0
