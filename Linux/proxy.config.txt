@@ -29,3 +29,8 @@ git config --global https.proxy https://proxyUsername:proxyPassword@proxy.server
 ## or
 git config --global http.https://domain.com.proxy http://proxyUsername:proxyPassword@proxy.server.com:port
 git config --global http.https://domain.com.sslVerify false
+
+
+# npm:
+$ npm config set proxy http://<username>:<password>@<proxy-server-url>:<port>
+$ npm config set https-proxy http://<username>:<password>@<proxy-server-url>:<port>
