@@ -31,8 +31,9 @@ git config --global http.https://domain.com.proxy http://proxyUsername:proxyPass
 git config --global http.https://domain.com.sslVerify false
 ## or in file /etc/gitconfig
 [http]
-[http "https://domain.com"]
+[http "https://domain.com"]    # only this domain.com affected with sslverify=false.
 	proxy = http://proxyUsername:proxyPassword@proxy.server.com:port
+	sslVerify = false
 ## or in file ~/.gitconfig
 
 # npm:
