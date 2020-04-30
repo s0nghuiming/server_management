@@ -1,0 +1,9 @@
+]c :                    - next difference
+[c :                    - previous difference
+do                      - diff obtain
+dp                      - diff put
+zo                      - open folded text
+zc                      - close folded text
+Ctrl-W,W                - lets you toggle between the diff columns
+:diffupdate             - re-scan the files for differences
+:set diffopt+=iwhite    - To avoid whitespace comparison
