@@ -1,0 +1,5 @@
+# compare 2 folders with brief output
+diff --brief -r folder1 folder2
+
+# compare 2 files in different hosts
+diff <(ssh theano@mlt-ace cat /home/theano/workspace/source/theano/intel-theano/theano/sandbox/mkl/tests/extra_tests/test_relu_extra.py) <(cat /home/sys_dltest/workspace/source/theano/intel-theano/theano/sandbox/mkl/tests/extra_tests/test_relu_extra.py)
