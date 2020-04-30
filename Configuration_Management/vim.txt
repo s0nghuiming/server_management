@@ -1,0 +1,5 @@
+Ctrl+E and Ctrl+Y shortcuts for Vim that respectively move the screenCtrl+E and Ctrl+Y shortcuts for Vim that respectively move the screen up and down with a one line step, without moving the cursor.
+
+z, z - move current line to the middle of the screen(Note: Z, Z will save and close vim.)
+z, t - move current line to the top of the screen
+z, z - move current line to the bottom of the screen
