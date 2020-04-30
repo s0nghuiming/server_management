@@ -1,0 +1,2 @@
+# backup from remote host to local
+mysqldump --host=<remote host> -u<user> -p<psswd> --opt <dbname> | mysql --host=localhost -u<user> -p<psswd> -C <dbname>
