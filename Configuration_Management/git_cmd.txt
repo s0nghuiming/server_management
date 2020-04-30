@@ -19,6 +19,9 @@ git log --pretty=format:'%H : %an : %cd : %s' > log.log
 # show graph of log
 git log --pretty=format:'%H : %s' --graph > log.log
 
+# get latest tag
+tag=$(git describe --tags `git rev-list --tags --max-count=1`)
+
 # show a simple log
 git --no-pager log --pretty=format:'%H %ai, message: %s' | grep ".* 2017" 
 
