@@ -36,6 +36,13 @@ git config --global http.https://domain.com.sslVerify false
 	sslVerify = false
 ## or in file ~/.gitconfig
 
+
 # npm:
 $ npm config set proxy http://<username>:<password>@<proxy-server-url>:<port>
 $ npm config set https-proxy http://<username>:<password>@<proxy-server-url>:<port>
+
+
+# apm (atom config):
+apm config set proxy "http://localhost:8888"
+apm config set https_proxy proxy "http://localhost:8888"
+apm config set strict-ssl false
