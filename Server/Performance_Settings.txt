@@ -1,3 +1,0 @@
-Intel main board:
-# Turbo on/off
-Enter BIOS, Advanced/Power&Performance/CPU P State/Turbo.
