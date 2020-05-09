@@ -1,17 +1,28 @@
-# Ubuntu:
-## file: /etc/environment (>version 18)
+# OS proxy settings:
+## Ubuntu (>version 18) file: /etc/environment
+```bash
 http_proxy=
 https_proxy=
 ftp_proxy=
 no_proxy=127.0.0.*;localhost
+```
+
+## CentOS file: /etc/profile.d/proxy.sh
+```bash
+export http_proxy=http://child-prc.intel.com:913
+export https_proxy=http://child-prc.intel.com:913
+export no_proxy="192.168.*.*"
+```
 
 
 # Wget:
 ## file: /etc/wgetrc. the file includes sample
+```text
 https_proxy = http://child-prc.intel.com:913/
 http_proxy = http://child-prc.intel.com:913/
 ftp_proxy = http://child-prc.intel.com:913/
 use_proxy = on
+```
 
 
 # apt:
@@ -26,15 +37,26 @@ Acquire::ftp::Proxy "https://proxy-server:port/";
 # Git:
 git config --global http.proxy http://proxyUsername:proxyPassword@proxy.server.com:port
 git config --global https.proxy https://proxyUsername:proxyPassword@proxy.server.com:port
-## or
+or
 git config --global http.https://domain.com.proxy http://proxyUsername:proxyPassword@proxy.server.com:port
 git config --global http.https://domain.com.sslVerify false
-## or in file /etc/gitconfig
+or in file /etc/gitconfig
 [http]
 [http "https://domain.com"]    # only this domain.com affected with sslverify=false.
 	proxy = http://proxyUsername:proxyPassword@proxy.server.com:port
 	sslVerify = false
-## or in file ~/.gitconfig
+or in file ~/.gitconfig
+
+
+# docker:
+/etc/systemd/system/docker.service.d/http-proxy.conf
+[Service]
+Environment="HTTP_PROXY=http://user01:password@10.10.10.10:8080/"
+Environment="HTTPS_PROXY=https://user01:password@10.10.10.10:8080/"
+Environment="NO_PROXY= hostname.example.com,172.10.10.10"
+systemctl daemon-reload
+systemctl restart docker
+systemctl show docker --property Environment
 
 
 # npm:
