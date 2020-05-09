@@ -31,7 +31,7 @@ cpupower frequency-set -g performance  # set governor to performance
 # BIOS settings on performance
 
 ## Intel BIOS
-# Turbo on/off
+Turbo on/off:
 Enter BIOS, Advanced/Power&Performance/CPU P State/Turbo to turn on/off.
 
 ## Intel BIOS tool (syscfg)
