@@ -1,0 +1,48 @@
+# Screen Cheatsheet
+
+## Shell command
+```bash
+# initiate a screen
+screen
+
+# initiate a screen with name
+screen -S yourname
+
+# list all screen sessions
+screen -ls
+
+# detach an attached screen
+screen -d <screen-name>
+
+# reattach a screen
+screen -r <screen-name>
+
+# detach and attach a screen
+screen -dr <screen-name>
+```
+
+## Screen inner command
+```text
+Ctrl + c to create new window
+Ctrl + a , <Number> to go to window #Number
+Ctrl + a , p to go to the previous window
+Ctrl + a , n to go to the next window
+Ctrl + aa to switch window
+Ctrl + a , d to detach current screen
+Ctrl + a , [ to go into search mode
+Ctrl + s  to intercept a window
+Ctrl + q  to release a window
+
+# Hard copy the current buffer to a file (which is located at ~)
+Ctrl + a, : to get to command mode, then hardcopy -h <filename>
+
+# Logging a window
+Ctrl + a, H  to toggle window logging
+
+# Split screen
+Ctrl + a, |  to split vertically
+Ctrl + a, S  to split horizontally
+
+# Rename a window
+Ctrl + a, A  to rename a window
+```
