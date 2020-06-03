@@ -15,7 +15,7 @@ export no_proxy="192.168.*.*"
 ```
 
 
-# Wget:
+# Wget
 ## file: /etc/wgetrc. the file includes sample
 ```text
 https_proxy = http://child-prc.intel.com:913/
@@ -25,7 +25,7 @@ use_proxy = on
 ```
 
 
-# apt:
+# apt
 ## file: /etc/apt/apt.conf.d/proxy [optional]
 Acquire::http::Proxy "http://proxy-server:port/";
 Acquire::https::Proxy "https://proxy-server:port/";
@@ -34,37 +34,57 @@ Acquire::ftp::Proxy "https://proxy-server:port/";
 #Acquire::socks::Proxy "socks5://proxy-server:port/"; 
 
 
-# Git:
+# Git
+Shell command
+```bash
 git config --global http.proxy http://proxyUsername:proxyPassword@proxy.server.com:port
 git config --global https.proxy https://proxyUsername:proxyPassword@proxy.server.com:port
 or
 git config --global http.https://domain.com.proxy http://proxyUsername:proxyPassword@proxy.server.com:port
 git config --global http.https://domain.com.sslVerify false
-or in file /etc/gitconfig
+```
+
+Or in file /etc/gitconfig
+```text
 [http]
 [http "https://domain.com"]    # only this domain.com affected with sslverify=false.
 	proxy = http://proxyUsername:proxyPassword@proxy.server.com:port
 	sslVerify = false
-or in file ~/.gitconfig
+```
+
+Or in file ~/.gitconfig
+```text
+tbd
+```
 
 
-# docker:
-/etc/systemd/system/docker.service.d/http-proxy.conf
+# docker
+In file /etc/systemd/system/docker.service.d/http-proxy.conf
+```text
 [Service]
 Environment="HTTP_PROXY=http://user01:password@10.10.10.10:8080/"
 Environment="HTTPS_PROXY=https://user01:password@10.10.10.10:8080/"
 Environment="NO_PROXY= hostname.example.com,172.10.10.10"
+```
+Enable configuration.
+```bash
 systemctl daemon-reload
 systemctl restart docker
 systemctl show docker --property Environment
+```
 
-
-# npm:
+# npm
+NPM is what? I forgot.
+```bash
 $ npm config set proxy http://<username>:<password>@<proxy-server-url>:<port>
 $ npm config set https-proxy http://<username>:<password>@<proxy-server-url>:<port>
+```
 
 
-# apm (atom config):
+# apm (atom config)
+Atom plugin installation needs proxy.
+```bash
 apm config set proxy "http://localhost:8888"
 apm config set https_proxy proxy "http://localhost:8888"
 apm config set strict-ssl false
+```
