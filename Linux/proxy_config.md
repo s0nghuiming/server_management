@@ -1,16 +1,16 @@
 # OS proxy settings:
 ## Ubuntu (>version 18) file: /etc/environment
 ```bash
-http_proxy=
-https_proxy=
-ftp_proxy=
+http_proxy=http://proxy-server:port
+https_proxy=http://proxy-server:port
+ftp_proxy=http://proxy-server:port
 no_proxy=127.0.0.*;localhost
 ```
 
 ## CentOS file: /etc/profile.d/proxy.sh
 ```bash
-export http_proxy=http://child-prc.intel.com:913
-export https_proxy=http://child-prc.intel.com:913
+export http_proxy=http://proxy-server:port
+export https_proxy=http://proxy-server:port
 export no_proxy="192.168.*.*"
 ```
 
@@ -74,7 +74,7 @@ systemctl show docker --property Environment
 ```
 
 # npm
-NPM is what? I forgot.
+NPM is node.js project manager
 ```bash
 $ npm config set proxy http://<username>:<password>@<proxy-server-url>:<port>
 $ npm config set https-proxy http://<username>:<password>@<proxy-server-url>:<port>
