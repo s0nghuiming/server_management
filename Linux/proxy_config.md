@@ -64,7 +64,8 @@ In file /etc/systemd/system/docker.service.d/http-proxy.conf
 [Service]
 Environment="HTTP_PROXY=http://user01:password@10.10.10.10:8080/"
 Environment="HTTPS_PROXY=https://user01:password@10.10.10.10:8080/"
-Environment="NO_PROXY= hostname.example.com,172.10.10.10"
+Environment="SOCKS_PROXY=http://user01:password@10.10.10.10:8080/"
+Environment="NO_PROXY=hostname.example.com,172.10.*"
 ```
 Enable configuration.
 ```bash
