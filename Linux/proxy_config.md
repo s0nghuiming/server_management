@@ -89,3 +89,9 @@ apm config set proxy "http://localhost:8888"
 apm config set https_proxy proxy "http://localhost:8888"
 apm config set strict-ssl false
 ```
+
+# conda
+In file .condarc
+proxy_servers:
+    http: http://username:password@corp.com:8080
+    https: https://username:password@corp.com:8080
