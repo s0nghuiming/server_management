@@ -92,6 +92,8 @@ apm config set strict-ssl false
 
 # conda
 In file .condarc
+```text
 proxy_servers:
     http: http://username:password@corp.com:8080
     https: https://username:password@corp.com:8080
+```
