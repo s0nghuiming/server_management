@@ -28,6 +28,12 @@ cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor  # show current govern
 cpupower frequency-set -g performance  # set governor to performance
 ```
 
+# VTUNE setting
+/proc/sys/kernel/perf_event_paranoid default value is 2
+```bash
+echo -n 0 > /proc/sys/kernel/perf_event_paranoid
+```
+
 # BIOS settings on performance
 
 ## Intel BIOS
