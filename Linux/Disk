@@ -1,0 +1,3 @@
+# Resize lvm partition
+lvresize -l +100%FREE /dev/mapper/vg00-lv01
+resize2fs /dev/mapper/vg00-lv01
