@@ -1,0 +1,11 @@
+# Windows 10/11:
+
+Install tool in Power Shell:
+Install-Module SpeculationControl
+### need press Y and Enter twice.
+$SaveExecutionPolicy = Get-ExecutionPolicy
+Set-ExecutionPolicy RemoteSigned -Scope Currentuser
+### need press Y and Enter.
+Import-Module SpeculationControl
+Get-SpeculationControlSettings
+
