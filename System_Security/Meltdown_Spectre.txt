@@ -1,5 +1,5 @@
-# Windows 10/11:
-
+https://www.howtogeek.com/338801/how-to-check-if-your-pc-is-protected-against-meltdown-and-spectre/#the-command-line-method-windows-run-microsoft-s-powershell-script
+# Tool for Windows 10/11:
 Install tool in Power Shell:
 Install-Module SpeculationControl
 ### need press Y and Enter twice.
